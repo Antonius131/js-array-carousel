@@ -7,6 +7,8 @@
 //    - aggiungere la classe .active all'immagine successiva
 
 
+// get the img-wrapper div from the DOM
+const imgWrapper = document.getElementById('img-wrapper');
 
 // creating images array list
 const imgList = [
@@ -21,10 +23,22 @@ const imgList = [
 // creating a for cycle to put images in the DOM
 for (let i = 0;  i < imgList.length;  i++) {
 
-   const imgTag = document.createElement("img");
+   const imgTag = document.createElement('img');
    imgTag.setAttribute('src', imgList[i]);
 
    // get the #img-wrapper from the DOM
-   const imgWrapper = document.getElementById('img-wrapper');
    imgWrapper.append(imgTag);
+
 }
+
+// putting the active class to the first array image
+imgWrapper.children[0].classList.add('active');
+
+// get the next button from the DOM
+// const btnNext = document.getElementById('next-btn');
+
+// btnNext.addEventListener('click', function() {
+//    // removing .active form the image
+//    imgWrapper.children[0].classList.add('active');
+
+// });
