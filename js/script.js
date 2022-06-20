@@ -31,14 +31,24 @@ for (let i = 0;  i < imgList.length;  i++) {
 
 }
 
-// putting the active class to the first array image
-imgWrapper.children[0].classList.add('active');
+// get all the image list from the DOM
+const imgTagList = document.querySelectorAll('img');
+console.log(imgTagList.lenght);
 
-// get the next button from the DOM
-// const btnNext = document.getElementById('next-btn');
+// declare a variable to put active class to the images
+let activeImg = 0;
+imgTagList[activeImg].classList.add('active');
 
-// btnNext.addEventListener('click', function() {
-//    // removing .active form the image
-//    imgWrapper.children[0].classList.add('active');
 
-// });
+
+const nextBtn = document.getElementById('next-btn');
+
+nextBtn.addEventListener ('click', function() {
+   imgTagList[activeImg].classList.remove('active');
+   activeImg++;
+   imgTagList[activeImg].classList.add('active');
+
+   if (activeImg === imgTagList.lenght) {
+      activeImg = 0;
+   }
+});
