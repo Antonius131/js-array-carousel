@@ -33,22 +33,24 @@ for (let i = 0;  i < imgList.length;  i++) {
 
 // get all the image list from the DOM
 const imgTagList = document.querySelectorAll('img');
-console.log(imgTagList.lenght);
+console.log(imgTagList.length);
 
 // declare a variable to put active class to the images
 let activeImg = 0;
 imgTagList[activeImg].classList.add('active');
 
 
-
 const nextBtn = document.getElementById('next-btn');
 
 nextBtn.addEventListener ('click', function() {
    imgTagList[activeImg].classList.remove('active');
-   activeImg++;
-   imgTagList[activeImg].classList.add('active');
 
-   if (activeImg === imgTagList.lenght) {
+   activeImg++;
+
+   if (activeImg === imgTagList.length) {
       activeImg = 0;
    }
+   
+   imgTagList[activeImg].classList.add('active');
+   
 });
