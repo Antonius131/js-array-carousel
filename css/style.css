@@ -11,6 +11,6 @@
    object-fit: cover;
 }
 
-#image-wrapper img.active {
+#img-wapper img.active {
    display: block;
 }
